@@ -1772,7 +1772,7 @@ function(t, e, r) {
         return new i.
     default((function(e, r) {
             $.ajax({
-                url: "http://10.43.2.34:8888/bluedird/webview/answer/" + t.md5,
+                url: "http://192.168.43.173:8888/bluedird/webview/answer/" + t.md5,
                 timeout: 5e3,
                 success: function(r) {
                     null != r.data ? e((0, n.

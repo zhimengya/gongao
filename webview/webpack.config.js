@@ -10,7 +10,7 @@ module.exports = {
         filename: '[name].js',
     },
     // development production
-    // mode: 'production',
+    mode: 'production',
     plugins: [
         new CleanWebpackPlugin()
     ],

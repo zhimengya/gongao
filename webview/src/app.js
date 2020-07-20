@@ -10,7 +10,6 @@ const AntPathMatcher = new AntPathMatcherBuilder().create();
 const url = location.href;
 
 for (const listener of Listeners) {
-
     for (const e of listener.match) {
         if (AntPathMatcher.isMatch(e, url)) {
             listener.process();

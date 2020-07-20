@@ -5,14 +5,17 @@ export default {
         '*://tiku.*.cn/testing/login'
     ],
     process: function () {
-        
+
         bridge.call('toast', '注入成功');
 
-        $('#userName').val(localStorage.getItem('userName'));
-        $('#userPassword').val(localStorage.getItem('userPassword'));
-
         var $form = $('#loginForm').off('submit');
+        var $username = $('#userName');
+        var $password = $('#userPassword');
         var $submit = $('#login').attr('type', 'button');
+        var $verifyCode = $('#verifyCode')
+
+        $username.val(localStorage.getItem('userName'));
+        $password.val(localStorage.getItem('userPassword'));
 
         $submit.on('click', function () {
 
@@ -23,12 +26,12 @@ export default {
                 params[e.name] = e.value;
             }
 
-            login(loginUrl, params).then(res => {
-                localStorage.setItem('userName', $('#userName').val());
-                localStorage.setItem('userPassword', $('#userPassword').val());
+            login(loginUrl, params).then(() => {
+                localStorage.setItem('userName', $username.val());
+                localStorage.setItem('userPassword', $password.val());
                 location.reload();
             }).catch(e => {
-                $('#verifyCode').val('');
+                $verifyCode.val('');
                 getKaptcha();
                 alert(e);
             }).finally(() => {
@@ -55,7 +58,7 @@ export default {
 /**
  * 刷新cookie
  */
-function flushCookie () {
+function flushCookie() {
 
     var params = {
         url: loginUrl,
@@ -77,7 +80,7 @@ function flushCookie () {
  * 
  * 获取验证码
  */
-function flushKaptcha () {
+function flushKaptcha() {
 
     var params = {
         url: 'http://tiku.kgc.cn/testing/Kaptcha?2',
@@ -108,7 +111,7 @@ function flushKaptcha () {
 /**
  * 登录
  */
-function login (url, data) {
+function login(url, data) {
 
     var params = {
         url: url,

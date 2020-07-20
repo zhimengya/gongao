@@ -1,11 +1,11 @@
 import Listeners from './listener/';
 import AntPathMatcherBuilder from 'ant-pattern-matcher';
 
-const AntPathMatcher = new AntPathMatcherBuilder().create();
-
 if (!window.hasOwnProperty('jQuery')) {
     throw '不包含jQuery不执行';
 }
+
+const AntPathMatcher = new AntPathMatcherBuilder().create();
 
 const url = location.href;
 

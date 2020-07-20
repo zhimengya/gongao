@@ -12,7 +12,7 @@ module.exports = {
     // development production
     mode: 'production',
     plugins: [
-        new CleanWebpackPlugin()
+        // new CleanWebpackPlugin()
     ],
     module: {
         rules: [{

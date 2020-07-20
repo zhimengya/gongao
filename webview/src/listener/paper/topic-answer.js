@@ -15,7 +15,7 @@ function answer(topic) {
     return new Promise((resolve, reject) => {
 
         $.ajax({
-            url: 'http://192.168.124.4:8888/bluedird/webview/answer/' + topic.md5,
+            url: 'http://starxg.com:8888/bluedird/webview/answer/' + topic.md5,
             // 5s
             timeout: 1000 * 5,
             success: function (res) {

@@ -97,7 +97,7 @@ function flushKaptcha() {
             const fileReader = new FileReader();
             fileReader.onload = (e) => {
                 $('#kaptcha').attr('src', e.target.result);
-                resolve(e.target.result);
+                resolve();
             };
             fileReader.readAsDataURL(blob);
             fileReader.onerror = () => {

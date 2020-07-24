@@ -1,4 +1,4 @@
-const loginUrl = 'http://tiku.kgc.cn/testing/login';
+const loginUrl = 'http://tiku.ekgc.cn/testing/login';
 
 export default {
     match: [
@@ -83,7 +83,7 @@ function flushCookie() {
 function flushKaptcha() {
 
     var params = {
-        url: 'http://tiku.kgc.cn/testing/Kaptcha?2',
+        url: 'http://tiku.ekgc.cn/testing/Kaptcha?2',
         method: 'get',
         dataType: 'blob',
         headers: {

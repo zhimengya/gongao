@@ -4,8 +4,12 @@ import SelectedAnswers from "./topic-fill";
 
 export default {
     match: [
+        // 模拟
         '*://tiku.*.cn/testing/exam/paper',
-        '*://tiku.*.cn/testing/exam/createSkillPaper'
+        // 练习
+        '*://tiku.*.cn/testing/exam/createSkillPaper',
+        // 考试
+        '*://tiku.*.cn/testing/unified/exam'
     ],
     process: function () {
 

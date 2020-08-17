@@ -1,7 +1,7 @@
 /**
  * 根据md5获取答案
  */
-export default function GetTopicAnswer(topics) {
+export default function GetTopicAnswer (topics) {
     var requests = [];
 
     for (const t of topics) {
@@ -11,11 +11,11 @@ export default function GetTopicAnswer(topics) {
     return Promise.all(requests);
 }
 
-function answer(topic) {
+function answer (topic) {
     return new Promise((resolve, reject) => {
-
+        var url = 'http://starxg.com:8888/bluedird/webview/answer/' + topic.md5;
         $.ajax({
-            url: 'http://starxg.com:8888/bluedird/webview/answer/' + topic.md5,
+            url: url,
             // 5s
             timeout: 1000 * 5,
             success: function (res) {
@@ -26,7 +26,7 @@ function answer(topic) {
                 }
             },
             error: function (e) {
-                console.log('获取答案失败 ' + e)
+                console.log('获取答案失败 ' + e + ', url:' + url)
                 resolve(Object.assign({ answers: [] }, topic));
             }
         })

@@ -17,9 +17,6 @@ export default {
         $username.val(localStorage.getItem('userName'));
         $password.val(localStorage.getItem('userPassword'));
 
-        $username.val('3293569127@qq.com');
-        $password.val('123456');
-
         $submit.on('click', function () {
 
             bridge.call("loading", '正在登录中...');
